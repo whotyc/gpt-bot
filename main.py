@@ -61,7 +61,6 @@ def handle_message(message):
     prompt += "\nConversation history:\n" + "\n".join([item["content"] for item in chat_contexts[chat_id]])
 
     try:
-        # Генерация ответа через g4f
         response = g4f.ChatCompletion.create(
             model="gpt-4o",
             messages=[{"role": "user", "content": prompt}],
